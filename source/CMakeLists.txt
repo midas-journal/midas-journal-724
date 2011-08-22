@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 2.6)
+
+PROJECT(vtkMeshFrontIterator)
+ENABLE_TESTING()
+
+FIND_PACKAGE(VTK REQUIRED)
+INCLUDE(${VTK_USE_FILE})
+
+ADD_EXECUTABLE(vtkMeshFrontIteratorExample vtkMeshFrontIteratorExample.cxx
+vtkMeshFrontIterator.cxx)
+TARGET_LINK_LIBRARIES(vtkMeshFrontIteratorExample vtkHybrid vtkInfovis)
+
+ADD_EXECUTABLE(vtkMeshFrontIteratorDemo vtkMeshFrontIteratorDemo.cxx
+vtkMeshFrontIterator.cxx)
+TARGET_LINK_LIBRARIES(vtkMeshFrontIteratorDemo vtkHybrid vtkInfovis)
+
+ADD_EXECUTABLE(vtkMeshFrontIteratorTest vtkMeshFrontIteratorTest.cxx
+vtkMeshFrontIterator.cxx)
+TARGET_LINK_LIBRARIES(vtkMeshFrontIteratorTest vtkHybrid vtkInfovis)
+ADD_TEST(vtkMeshFrontIteratorTest vtkMeshFrontIteratorTest)
+
+
